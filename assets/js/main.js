@@ -1,5 +1,25 @@
 "use strict";
 
+function sendMail() {
+    
+
+    let params = {
+        from_name: document.getElementById("from_name").value,
+        phone : document.getElementById("phone").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value
+    }
+
+    if (params.from_name !== "" || params.email !== "" || params.message !== ""){
+        emailjs.send("service_0azk7z2", "template_fo2fg2o", params).then(function (response){
+            alert("Message Sent Successfully!");
+        });  
+    } else {
+        alert("ERROR! Kindly fill out the required fields.")
+    }
+                  
+}
+
 var fullHeight = function() {
 
 		$('.js-fullheight').css('height', $(window).height());

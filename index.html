@@ -49,14 +49,18 @@
 
         <!--Old browser  JS-->
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("TSlQjXoP1_LNtrBVA");
+            })();
+        </script>
 
     </head>
 
     <body data-spy="scroll" data-target="#scrollspy">
-
-
-
-
 
         <div class="main_figur">
 
@@ -335,7 +339,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="name" placeholder="Your Name..." required="">
+                                                            <input type="text" class="form-control" name="from_name" id="from_name" placeholder="Your Name..." required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -343,25 +347,25 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <input type="email" class="form-control" name="email" placeholder="Your Email Address" required="">
+                                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <textarea class="form-control" name="message" rows="8" placeholder="Your Message"></textarea>
+                                                            <textarea class="form-control" name="message" id="message" rows="8" placeholder="Your Message" required></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row text-center">
                                                     <div class="m-b-2 m-t-2">
-                                                        <input type="submit" value="Send message">
+                                                        <input class="btn" id="send_btn" onclick="sendMail()" value="Send message">
                                                     </div>
                                                 </div>
                                             </form>
@@ -392,8 +396,6 @@
 
 
         </div>
-
-
 
         <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>
